@@ -64,7 +64,10 @@ function expressionCalculator(expr) {
     if (arr[i]=="+") {S=(+arr[i-1])+(+arr[i+1]);i-=1;arr[i]=S;arr.splice(i+1,2);}
     if (arr[i]=="-") {S=(+arr[i-1])-(+arr[i+1]);i-=1;arr[i]=S;arr.splice(i+1,2);}
   }
-  return (+arr);
+   let result=+arr;
+   result= Math.round(result*10000);
+   result/=10000;
+  return result;
 }
 
 module.exports = {
